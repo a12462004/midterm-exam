@@ -1,0 +1,7 @@
+<%= form_for book do |f| %>
+書名: <%= f.text_field :name %></br>
+簡介: <%= f.text_field :introduction %></br>
+作者: <%= f.text_field :writer %></br>
+售價: <%= f.text_area :price %></br>
+<%= f.submit %>
+<% end %>
