@@ -2,6 +2,10 @@ class BooksController < ApplicationController
   def index
     @books=Book.all
   end
+  def show
+    @book = Book.find_by(id: params[:id])
+    redirect_to books_path, notice: "no data!" if @book.nil?
+  end
   def new
     @book = Book.new
   end
