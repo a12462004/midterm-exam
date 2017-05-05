@@ -24,11 +24,19 @@ class BooksController < ApplicationController
   end
   def update
     @book = Book.find_by(id: params[:id])
+    redirect_to books_path, notice: "no data!" if @book.nil?
     if  @book.update(book_params)
       redirect_to books_path, notice: "update"
   else
     render 'update'
   end
+  end
+   def destroy
+    @book = Book.find_by(id: params[:id])
+    redirect_to books_path, notice: "no data!" if @book.nil?
+    @book.destroy
+    #flash[:notice] = "deleted!"
+    redirect_to books_path, notice: "deleted!"
   end
   def book_params
     params.require("book").permit(:name, :introduction, :writer, :price)

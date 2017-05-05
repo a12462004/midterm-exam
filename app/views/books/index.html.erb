@@ -20,7 +20,7 @@
         <td><%= book.price %></td>
         <td>
         <%= link_to "edit",edit_book_path(book) %>
-        <%= link_to "delete",book,method: "delete" %>
+        <%= link_to "delete",book,method: "delete",data:{ confirm: 'delete?!'} %>
       </td>
       </tr>
       <% end %>
