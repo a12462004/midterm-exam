@@ -18,6 +18,10 @@
         <td><%= book.introduction %></td>
         <td><%= book.writer %></td>
         <td><%= book.price %></td>
+        <td>
+        <%= link_to "edit",edit_book_path(book) %>
+        <%= link_to "delete",book,method: "delete" %>
+      </td>
       </tr>
       <% end %>
     </tbody>
